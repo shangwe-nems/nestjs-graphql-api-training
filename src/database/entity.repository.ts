@@ -17,7 +17,7 @@ export abstract class EntityRepository<T extends Document> {
   }
 
   async find(entityFilterQuery: FilterQuery<T>): Promise<T[] | null> {
-    return this.entityModel.find(entityFilterQuery).exec();
+    return this.entityModel.find(entityFilterQuery);
   }
 
   async create(createEntityData: unknown): Promise<T> {
